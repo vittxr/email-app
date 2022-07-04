@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style/main.css">
+</head>
+<body>
+    {% if emailEnviado == True %}
+        <script>
+            alert("email enviado! B)")
+        </script>
+    {% endif %}
+
+    <div class="page-container">
+        <div class="form-container">
+            <h3>Caso tenha alguma crítica, por favor mande no nosso e-mail, que iremos ignora-la com muito prazer :)</h3>
+            <form class='sendMail-form' action="{{ url_for ('main.sendEmail') }}" method="POST">
+                <input name="name" type="text" placeholder="nome">
+                <input name="email" type="email" placeholder="email">
+                <textarea name="message" type="text" placeholder="message"></textarea>
+                <input type="submit" value='send mail' class="btn-sendMail"> 
+            </form>
+        </div>
+    </div> 
+</body>
+</html>
